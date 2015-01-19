@@ -10,27 +10,29 @@ public class FileLoader {
     private File[] files;
     private File[][] totalStructure;
 
-    public FileLoader(String dir){
+    public FileLoader(String dir) {
         this.directory = new File(dir);
-        if(directory.exists()){
+        if (directory.exists()) {
             directories = directory.listFiles();
             for (int i = 0; i < directories.length; i++) {
-                if(directories[i].exists()){
+                if (directories[i].exists()) {
                     files = directories[i].listFiles();
                 }
             }
-            totalStructure = new File[directories.length][files.length+1];
-            for (int i = 0; i <totalStructure.length ; i++) {
+            totalStructure = new File[directories.length][files.length  ];
+            for (int i = 0; i < totalStructure.length; i++) {
                 totalStructure[i][0] = directories[i];
-                for (int j = 1; j <totalStructure[i].length ; j++) {
-                totalStructure[i][j] = files[j-1];
+                for (int j = 1; j < totalStructure[i].length; j++) {
+                    if (!"EventCombMT.txt".equals(files[j-1 ].getName())) {
+                        totalStructure[i][j] = files[j-1];
 
+
+                    }
                 }
             }
+
+            //TODO ver si puedo cambiar todo a una estructura unica (LISTO!)
         }
-
-
-    //TODO ver si puedo cambiar todo a una estructura unica (LISTO!)
     }
 
     public File[][] getTotalStructure(){

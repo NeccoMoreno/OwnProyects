@@ -20,11 +20,14 @@ public class Tester {
                 System.out.println(prueba[i][j]);
             }
         }*/
+/*
+        FileLoader fl = new FileLoader("D:\\LOGS");
+        fl.printFileLength();
 
-        FileReader fr = new FileReader("d:\\LOGS");
-        for (int i = 0; i < fr.getFileLine().length; i++) {
-            System.out.println(fr.getFileLine()[i]);
-        }
+  */
+        FileReader fr = new FileReader("D:\\LOGS");
+        fr.readTextLine();
+
     }
 
 }
