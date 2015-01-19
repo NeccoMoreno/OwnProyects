@@ -21,8 +21,10 @@ public class Tester {
             }
         }*/
 
-        FileLoader fl = new FileLoader("d:\\LOGS");
-        fl.printFileLength();
+        FileReader fr = new FileReader("d:\\LOGS");
+        for (int i = 0; i < fr.getFileLine().length; i++) {
+            System.out.println(fr.getFileLine()[i]);
+        }
     }
 
 }
